@@ -49,7 +49,7 @@
 				<plugin>
 					<artifactId>maven-surefire-plugin</artifactId>
 					<configuration>
-						<reportsDirectory>shippable/testresults/</reportsDirectory>
+						<!-- <reportsDirectory>shippable/testresults/</reportsDirectory> -->
 					</configuration>
 				</plugin>
             </plugins>
