@@ -33,4 +33,42 @@ public class RSSParserTest extends TestCase
 
         assertEquals(4, feed.getEntries().size());
     }
+    
+    public void testRSS2Sample2() throws Exception
+    {
+        InputStream inputStream = getClass().getResourceAsStream(RSS2_SAMPLE);
+        FeedParser feedParser = new RSSParser();
+        Feed feed = feedParser.parse(inputStream);
+        
+        assertEquals("Liftoff News", feed.getTitle());
+        assertEquals("Liftoff to Space Exploration.", feed.getDescription());
+        assertEquals("en-us", feed.getLanguage());
+        assertEquals("Tue, 10 Jun 2003 04:00:00 GMT", feed.getPubDate());
+        assertEquals("Tue, 10 Jun 2003 09:41:01 GMT", feed.getLastBuildDate());
+        assertEquals("Weblog Editor 2.0", feed.getGenerator());
+        assertEquals("editor@example.com", feed.getManagingEditor());
+        assertEquals("webmaster@example.com", feed.getWebMaster());
+        assertEquals("http://to/my/image.png", feed.getImage());
+
+        assertEquals(4, feed.getEntries().size());
+    }
+    
+    public void testRSS2Sample3() throws Exception
+    {
+        InputStream inputStream = getClass().getResourceAsStream(RSS2_SAMPLE);
+        FeedParser feedParser = new RSSParser();
+        Feed feed = feedParser.parse(inputStream);
+        
+        assertEquals("Liftoff News", feed.getTitle());
+        assertEquals("Liftoff to Space Exploration.", feed.getDescription());
+        assertEquals("en-us", feed.getLanguage());
+        assertEquals("Tue, 10 Jun 2003 04:00:00 GMT", feed.getPubDate());
+        assertEquals("Tue, 10 Jun 2003 09:41:01 GMT", feed.getLastBuildDate());
+        assertEquals("Weblog Editor 2.0", feed.getGenerator());
+        assertEquals("editor@example.com", feed.getManagingEditor());
+        assertEquals("webmaster@example.com", feed.getWebMaster());
+        assertEquals("http://to/my/image.png", feed.getImage());
+
+        assertEquals(4, feed.getEntries().size());
+    }
 }
